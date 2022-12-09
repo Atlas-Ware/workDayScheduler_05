@@ -2,7 +2,7 @@
 var todayDate = moment().format('dddd, MMM Do YYYY');
 $("#currentDay").html(todayDate);
 
-// Saves typed info in local storage
+
 $(document).ready(function () {
     $(".saveBtn").on("click", function () {
         var text = $(this).siblings(".description").val();
@@ -38,7 +38,7 @@ $(document).ready(function () {
         })
     }
 
-// ??
+// Returns info that was typed into local storage and stores it
     $("#hour9 .description").val(localStorage.getItem("hour9"));
     $("#hour10 .description").val(localStorage.getItem("hour10"));
     $("#hour11 .description").val(localStorage.getItem("hour11"));
@@ -48,6 +48,6 @@ $(document).ready(function () {
     $("#hour15 .description").val(localStorage.getItem("hour15"));
     $("#hour16 .description").val(localStorage.getItem("hour16"));
     $("#hour17 .description").val(localStorage.getItem("hour17"));
-// ??
+
     timeTracker();
 })
