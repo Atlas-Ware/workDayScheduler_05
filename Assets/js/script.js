@@ -4,19 +4,25 @@ $("#currentDay").html(todayDate);
 
 
 $(document).ready(function () {
+// This 1st part of the function saves any data typed in each time block
     $(".saveBtn").on("click", function () {
+// This varaibale saves the text that is type in
         var text = $(this).siblings(".description").val();
+// This varaibale saves my ID of the specific time where the text was written
         var time = $(this).parent().attr("id");
+// This takes var text and time and stores it in local storage
         localStorage.setItem(time, text);
     })
    
     function timeTracker() {
-// 9-5 hour setting
+// this varaible represents the current hour of the day
         var timeNow = moment().hour();
 
 // Time blocks loops
         $(".time-block").each(function () {
+// This varaiable are the specific time blocks that were made in the HTML
             var blockTime = parseInt($(this).attr("id").split("hour")[1]);
+            //console.log(blockTime);
 
 // These arguments keep each time block to show the right color based on time of day
             if (blockTime < timeNow) {
@@ -38,7 +44,7 @@ $(document).ready(function () {
         })
     }
 
-// Returns info that was typed into local storage and stores it
+// Returns info that was typed into local storage and keeps it, even if browser is refreshed
     $("#hour9 .description").val(localStorage.getItem("hour9"));
     $("#hour10 .description").val(localStorage.getItem("hour10"));
     $("#hour11 .description").val(localStorage.getItem("hour11"));
