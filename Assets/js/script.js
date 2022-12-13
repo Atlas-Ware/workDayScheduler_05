@@ -45,7 +45,7 @@ $(document).ready(function () {
     }
 
 // Returns info that was typed into local storage and keeps it, even if browser is refreshed
-    $("#hour9 textarea").val(localStorage.getItem("hour9"));
+    $("#hour09 textarea").val(localStorage.getItem("hour09"));
     $("#hour10 textarea").val(localStorage.getItem("hour10"));
     $("#hour11 textarea").val(localStorage.getItem("hour11"));
     $("#hour12 textarea").val(localStorage.getItem("hour12"));
